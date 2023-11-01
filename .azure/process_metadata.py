@@ -9,11 +9,13 @@ BASE_URL_FOR_THUMBNAILS = 'https://choreo-shared-choreo-samples-cdne.azureedge.n
 
 VALID_COMPONENT_TYPES = [
     "service", "webhook", "manual-task", "scheduled-task", 
-    "event-triggered", "event-handler", "test-runner"
+    "event-triggered", "event-handler", "test-runner", "many",
+    "web-application"
 ]
 
 VALID_BUILD_PRESETS = [
-    "ballerina", "wso2-mi", "go", "java", "php", "python", "nodejs", "ruby"
+    "ballerina", "wso2-mi", "go", "java", "php", "python", "nodejs", "ruby", 
+    "javascript", "many", "postman", "react", "docker"
 ]
 
 def collect_metadata_and_thumbnails():
@@ -31,8 +33,8 @@ def collect_metadata_and_thumbnails():
             with open(metadata_file, 'r') as f:
                 data = yaml.safe_load(f)
 
-                component_type = data.get('componentType', '').lower()
-                build_preset = data.get('buildPreset', '').lower()
+                component_type = data.get('componentType', '')
+                build_preset = data.get('buildPreset', '')
 
                 if component_type not in VALID_COMPONENT_TYPES:
                     print(f"Warning: '{component_type}' is not a valid componentType for directory: {directory}. Excluding from index.json.")
@@ -69,7 +71,7 @@ def generate_index_json(data):
         "count": len(data)
     }
 
-    with open(os.path.join(BUILD_STAGING_DIRECTORY, 'index-v2.json'), 'w') as f:
+    with open(os.path.join(BUILD_STAGING_DIRECTORY, 'index-v4.json'), 'w') as f:
         json.dump(index_data, f, separators=(',', ':'))  # Remove whitespace to minimize file size
     print("Generated index.json")
 
