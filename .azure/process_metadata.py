@@ -15,7 +15,7 @@ VALID_COMPONENT_TYPES = [
 
 VALID_BUILD_PRESETS = [
     "ballerina", "wso2-mi", "go", "java", "php", "python", "nodejs", "ruby", 
-    "javascript", "many", "postman", "react", "docker"
+    "nodejs", "many", "postman", "react", "docker"
 ]
 
 def collect_metadata_and_thumbnails():
@@ -71,7 +71,7 @@ def generate_index_json(data):
         "count": len(data)
     }
 
-    with open(os.path.join(BUILD_STAGING_DIRECTORY, 'index-v4.json'), 'w') as f:
+    with open(os.path.join(BUILD_STAGING_DIRECTORY, 'index-v5.json'), 'w') as f:
         json.dump(index_data, f, separators=(',', ':'))  # Remove whitespace to minimize file size
     print("Generated index.json")
 
