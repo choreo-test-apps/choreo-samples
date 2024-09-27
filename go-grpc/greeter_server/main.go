@@ -23,8 +23,8 @@ import (
 	"log"
 	"net"
 
+	greeter "github.com/wso2/choreo-samples/go-grpc/pkg"
 	"google.golang.org/grpc"
-	greeter "gtihub.com/wso2/choreo-sample-apps/go/grpc-greeter/pkg"
 )
 
 type server struct {

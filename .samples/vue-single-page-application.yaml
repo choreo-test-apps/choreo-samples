@@ -1,5 +1,5 @@
-displayName: React Single Page Application
-description: Simple React Single Page Web Application
+displayName: Vue Single Page Application
+description: Simple Vue Single Page Web Application
 componentType: web-application
 buildPack: vue
 repositoryUrl: https://github.com/wso2/choreo-samples/
@@ -7,4 +7,6 @@ componentPath: /vue-single-page-application
 thumbnailPath: /icons/vue-single-page-application.svg
 documentationPath: /vue-single-page-application/readme.md
 tags:
+  - Vue
   - Single Page Application
+imageUrl: choreoanonymouspullable.azurecr.io/vue-spa:v0.9
